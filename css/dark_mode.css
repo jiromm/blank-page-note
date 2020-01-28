@@ -1,0 +1,200 @@
+/*---------------------------------------------------------------------------*/
+								/*Top start*/
+
+/*dark mode switcher's text*/
+.dark-mode-switch > span{
+	color: #ccc;
+}
+
+/*head menu*/
+.hr{
+	background: #212626;
+	border-bottom: 1px solid #bbbbbb;
+}
+
+/*navigation tabs*/
+.nav-tabs {
+	border-bottom: 1px solid #bbbbbb !important;
+}
+
+/*active tab and other tabs if on hover*/
+.active .tab-name-input,li.tab>a:hover>input{
+	color: #ccc !important;
+}
+
+/*active tab*/
+.nav-tabs>li.active>a{
+	background-color: #2e3535 !important;
+	border-bottom-color: transparent !important;
+}
+
+/*active tab if on foucs or on hover*/
+.nav-tabs>li.active>a:hover{
+	background-color: #2e3535 !important;
+	border-bottom-color: transparent !important;
+}
+
+/*add new tab button*/
+.btn.btn-default{
+	background-color: #2e3535 !important;
+	color: #ccc !important;
+	border-color: #868686;
+}
+.btn.btn-default:hover{
+	background-color: #505d5d !important;
+	color: #eee !important;
+	border-color: #ccc;
+}
+
+/*Trash icon*/
+i.glyphicon.glyphicon-trash.delete-tab{
+	color: #ccc  !important;
+}
+i.glyphicon.glyphicon-trash.delete-tab:hover{
+	color: #a94442 !important;
+}
+
+								/*Top finish*/
+/*---------------------------------------------------------------------------*/
+								/*Middle start*/
+
+body{
+	background: #2e3535;
+}
+
+/*note's body*/
+.markdown-body  {
+	color: #d2d2d2;
+}
+
+/*note's body links*/
+.markdown-body a {
+	color: #84e4e0;
+}
+
+/*note's edit mode*/
+textarea.source {
+	background: #455a5a;
+	color: white !important;
+}
+
+/*note's code fields*/
+.markdown-body code {
+	background-color:#172426;
+	color: #84e4e0;
+	border-radius: 5px;
+}
+
+								/*Middle finish*/
+/*---------------------------------------------------------------------------*/
+								/*Modal start*/
+
+/*Modal popup*/
+.modal-content{
+	background-color: unset !important;
+}
+.modal-header{
+	background-color: #2e3535 !important;
+	border-bottom: 1px solid #ccc;
+	border-radius: 5px 5px 0 0;
+}
+.bg-danger .modal-title{
+	color: #ccc !important;
+	font-size: 16px !important;
+}
+.bg-danger .tab-name{
+	color: #ccc !important;
+	font-weight: bold !important;
+	font-style: italic !important;
+	font-size: 16px !important;
+}
+
+.modal-body{
+	background-color: #819292 !important;
+	border-bottom: 1px solid #ccc;
+}
+.modal-body p{
+	color: #2e3535;
+	font-size: 15px !important;
+	margin: unset;
+}
+
+.modal-footer{
+	background-color: #505d5d !important;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	padding: 10px;
+}
+
+.modal-footer > button.btn.btn-default{
+	background-color: #2e3535 !important;
+	color: #ccc !important;
+	border-color: #868686;
+	font-weight: normal;
+	
+}
+.modal-footer > button.btn.btn-default:hover{
+	background-color: #505d5d !important;
+	color: #eee !important;
+	border-color: #ccc;
+}
+
+/*delete button*/
+.btn-danger{
+	background-color: #501e1e !important;
+	border-color: #6f2f2d;
+	color: #f1c4c3;
+}
+.btn-danger:hover{
+	background-color: #5f2828 !important;
+	border-color: #8e5a58;
+	color: #f1d6d6;
+}
+
+/*save button*/
+.save-links{
+	background-color: #1f2f2c !important;
+	border-color: #509191;
+}
+.save-links:hover{
+	background-color: #2a403c !important;
+	border-color: #5ec3c1;
+}
+
+/*input fields*/
+.form-control {
+	background-color: #a6adac !important;
+	color: #2e3535 !important;
+}
+
+.form-control:focus {
+	border-color: #e8e8e8;
+	-webkit-box-shadow: unset;
+    box-shadow: unset;
+}
+.form-control::placeholder
+{
+	color: #2e3535 !important;
+}
+
+.btn.btn-default.delete-link, .btn.btn-default.add-new-link{
+	border-color: #ccc;
+}
+
+								/*Modal finish*/
+/*---------------------------------------------------------------------------*/
+								/*Buttom start*/
+
+footer{
+	background: rgb(25, 39, 43);
+	color: #75B5BF;
+	border-top: 1px solid #aaa;
+}
+
+footer a {
+	color: #FFF0C4;
+}
+
+footer a:hover, footer a:focus{
+	color: #FFF0C4;
+}

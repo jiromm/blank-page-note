@@ -1,19 +1,19 @@
 // TODO Use https://developer.chrome.com/extensions/storage as a storage
 
 var converter = new Showdown.converter(),
-    NEW_TAB_NAME = 'New Tab Name',
-    NEW_TAB_CONTENT = 'Don\'t make me think...';
+	NEW_TAB_NAME = 'New Tab Name',
+	NEW_TAB_CONTENT = 'Don\'t make me think...';
 
-$(function() {
+$(function () {
 	var code = $('code'),
-            nav = $('.nav'),
-            linksModal = $('#links-modal');
+		nav = $('.nav'),
+		linksModal = $('#links-modal');
 
 	setupEditor();
 	migrate();
 	setupEnv();
 
-	$('.new').click(function(e) {
+	$('.new').click(function (e) {
 		e.preventDefault();
 
 		if ($('.tab').length == 5) {
@@ -23,7 +23,7 @@ $(function() {
 		drawNewTab(NEW_TAB_NAME, NEW_TAB_CONTENT);
 	});
 
-	nav.on('click', '.delete-tab', function(e, force) {
+	nav.on('click', '.delete-tab', function (e, force) {
 		e.preventDefault();
 
 		if (force) {
@@ -31,13 +31,13 @@ $(function() {
 		}
 	});
 
-	linksModal.on('click', '.delete-link', function(e) {
+	linksModal.on('click', '.delete-link', function (e) {
 		e.preventDefault();
 
 		$(this).closest('.form-group').remove();
 	});
 
-	nav.on('input change', '.tab-name-input', function() {
+	nav.on('input change', '.tab-name-input', function () {
 		saveTabName($(this).closest('a').attr('data-id'), $(this).val());
 	});
 
@@ -51,13 +51,13 @@ $(function() {
 		switchTab($(this));
 	});
 
-	$('.add-new-link').on('click', function(e) {
+	$('.add-new-link').on('click', function (e) {
 		e.preventDefault();
 
 		drawNewLinkInput();
 	});
 
-	$(document).on('click', 'code', function() {
+	$(document).on('click', 'code', function () {
 		var range, selection;
 
 		selection = window.getSelection();
@@ -79,7 +79,7 @@ $(function() {
 		modal.find('.tab-name').text(tabName);
 
 		deleteBtn.off('click');
-		deleteBtn.on('click', function() {
+		deleteBtn.on('click', function () {
 			button.trigger('click', [true]);
 		});
 	});
@@ -92,7 +92,7 @@ $(function() {
 		}
 	});
 
-	$('.save-links').on('click', function(e) {
+	$('.save-links').on('click', function (e) {
 		e.preventDefault();
 
 		saveLinks();
@@ -406,7 +406,7 @@ function deleteTab(tabEl) {
 	localStorage.setItem('ids', JSON.stringify(idList));
 	tabEl.remove();
 
-	setTimeout(function() {
+	setTimeout(function () {
 		switchTab($('.tab').eq(0));
 	}, 1);
 }
@@ -431,7 +431,7 @@ function migrate() {
 }
 
 function setupEditor() {
-	$(window).resize(function() {
+	$(window).resize(function () {
 		$('.source').css({
 			height: (window.innerHeight - 123) + 'px'
 		});
@@ -454,3 +454,33 @@ function activateSortableLinks() {
 			placeholderClass: 'link-group-item-placeholder'
 		});
 }
+
+let storageDarkMode = localStorage.getItem('Dark Mode On/Off');
+let checkbox = document.querySelector("input[id=darkMode]");
+let darkModeCss = document.getElementById("darkModeCss");
+
+if (typeof storageDarkMode == undefined) {
+	storageDarkMode = false;
+	darkModeCss.disabled = true;
+	checkbox.checked = false;
+} else if (storageDarkMode == "on") {
+	storageDarkMode = true;
+	darkModeCss.disabled = false;
+	checkbox.checked = true;
+} else {
+	storageDarkMode = false;
+	darkModeCss.disabled = true;
+	checkbox.checked = false;
+};
+
+
+checkbox.addEventListener('change', function () {
+	if (this.checked) {
+		localStorage.setItem('Dark Mode On/Off', "on")
+		darkModeCss.disabled = false;
+
+	} else {
+		localStorage.setItem('Dark Mode On/Off', "off")
+		darkModeCss.disabled = true;
+	}
+});
