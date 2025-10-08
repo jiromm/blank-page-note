@@ -81,4 +81,4 @@ We encourage you to review it occasionally.
 
 ## 10. Contact
 If you have questions or concerns about this Privacy Policy, please contact us at:  
-📧 **xquack@gmail.com**
+📧 **aram@jiromm.com**
