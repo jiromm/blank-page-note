@@ -1,8 +1,8 @@
 {
 	"name": "Blank Notes",
-	"description": "To take notes directly from chrome's blank page",
-	"manifest_version": 2,
-	"version": "1.4.0",
+	"description": "A note-taking app that replaces your new tab page. Features include markdown support, multiple tabs, quick links, and dark mode.",
+	"manifest_version": 3,
+	"version": "1.5.0",
 
 	"icons": {
 		"24": "assets/24.png",
@@ -11,9 +11,5 @@
 
 	"chrome_url_overrides": {
 		"newtab": "blank.html"
-	},
-
-	"permissions": [
-		"storage"
-	]
+	}
 }
